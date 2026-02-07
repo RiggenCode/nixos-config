@@ -61,13 +61,28 @@
     xwayland.enable = true;
   };
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    XCURSOR_THEME = "Bibata-Modern-Ice";
+    XCURSOR_SIZE = "24";
+    HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+    HYPRCURSOR_SIZE = "24";
+  };
+
+
+  services.displayManager.sessionPackages = [ pkgs.hyprland ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
+ 
 
+
+
+ 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -114,6 +129,23 @@
     prismlauncher
     git
     gh
+    vscode
+    python3
+
+    nwg-look
+    gtk3
+
+
+    bibata-cursors
+
+
+    # ani-cli + dependencies
+    ani-cli
+    mpv
+    yt-dlp
+    ffmpeg
+    fzf
+    patch
     
     # Hyprland essentials
     kitty              # Terminal (or use alacritty, foot, etc.)
